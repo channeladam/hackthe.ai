@@ -11,4 +11,24 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://hackthe.ai/machinelearning/libraries/tensorflow/</loc>
+    <lastmod>2019-01-04T00:00:00+00:00</lastmod>
+    
+    
+    
+  </url>
+  
+
+  
+  <url>
+    <loc>https://hackthe.ai/machinelearning/</loc>
+    <lastmod>2019-01-04T00:00:00+00:00</lastmod>
+    
+    <priority>0</priority>
+    
+  </url>
+  
+
 </urlset>
