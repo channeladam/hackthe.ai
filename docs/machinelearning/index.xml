@@ -8,7 +8,7 @@
     
     
     
-    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://hackthe.ai/machinelearning/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>Learn TensorFlow</title>
       <link>https://hackthe.ai/machinelearning/libraries/tensorflow/</link>
-      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://hackthe.ai/machinelearning/libraries/tensorflow/</guid>
       <description>Notes to help you learn and understand TensorFlow</description>
