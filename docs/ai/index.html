@@ -36,7 +36,7 @@
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-    <link rel="canonical" href="https://hackthe.ai/machinelearning/">
+    <link rel="canonical" href="https://hackthe.ai/ai/">
     
 <title>Hack the AI</title>    
 
@@ -45,23 +45,23 @@
 
 
 <meta property="og:title" content="" />
-<meta property="og:description" content=" These notes will help you to learn and understand Machine Learning.
-  --    Machine Learning  Definition here TODO   Machine Learning  Natural Language Processing (NLP)  Language Translation   Classification   Question Answering    Speech  Text to Speech    Computer Vision   Robotics   Deep Learning  Deep Neural Networks    Classic Machine Learning     " />
+<meta property="og:description" content=" These notes will help you to learn and understand how Artificial Intelligence relates to other topics.
+  --    Artificial Intelligence  A high-level, umbrella term for when machines or tools have cognitive capabilities (memory, knowing, perceiving, reasoning) and exhibit forms of intelligence   Machine Learning  Statistical tools for learning from data    Data Science  Techniques for analysing, understanding and gaining insights from data   Fundamental areas  Probability   Statistics   Linear Algebra   Numerical Optimisation   Data Visualisation   Computer Programming      " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hackthe.ai/machinelearning/" />
+<meta property="og:url" content="https://hackthe.ai/ai/" />
 <meta property="og:image" content="https://hackthe.ai/TODO.png" />
 <meta property="article:published_time" content="2019-01-15T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-01-15T00:00:00&#43;00:00"/>
 
 
 <meta itemprop="name" content="">
-<meta itemprop="description" content=" These notes will help you to learn and understand Machine Learning.
-  --    Machine Learning  Definition here TODO   Machine Learning  Natural Language Processing (NLP)  Language Translation   Classification   Question Answering    Speech  Text to Speech    Computer Vision   Robotics   Deep Learning  Deep Neural Networks    Classic Machine Learning     ">
+<meta itemprop="description" content=" These notes will help you to learn and understand how Artificial Intelligence relates to other topics.
+  --    Artificial Intelligence  A high-level, umbrella term for when machines or tools have cognitive capabilities (memory, knowing, perceiving, reasoning) and exhibit forms of intelligence   Machine Learning  Statistical tools for learning from data    Data Science  Techniques for analysing, understanding and gaining insights from data   Fundamental areas  Probability   Statistics   Linear Algebra   Numerical Optimisation   Data Visualisation   Computer Programming      ">
 
 
 <meta itemprop="datePublished" content="2019-01-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-01-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="43">
+<meta itemprop="wordCount" content="71">
 
   <meta itemprop="image" content="https://hackthe.ai/TODO.png">
 
@@ -73,8 +73,8 @@
 <meta name="twitter:image" content="https://hackthe.ai/TODO.png"/>
 
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=" These notes will help you to learn and understand Machine Learning.
-  --    Machine Learning  Definition here TODO   Machine Learning  Natural Language Processing (NLP)  Language Translation   Classification   Question Answering    Speech  Text to Speech    Computer Vision   Robotics   Deep Learning  Deep Neural Networks    Classic Machine Learning     "/>
+<meta name="twitter:description" content=" These notes will help you to learn and understand how Artificial Intelligence relates to other topics.
+  --    Artificial Intelligence  A high-level, umbrella term for when machines or tools have cognitive capabilities (memory, knowing, perceiving, reasoning) and exhibit forms of intelligence   Machine Learning  Statistical tools for learning from data    Data Science  Techniques for analysing, understanding and gaining insights from data   Fundamental areas  Probability   Statistics   Linear Algebra   Numerical Optimisation   Data Visualisation   Computer Programming      "/>
 
     <link rel="icon" href="/img/hacktheai/favicon.ico" type="image/ico">
 
@@ -150,12 +150,12 @@
   <div class="paper-inner mx-auto">
    <div class="card-container">
     <div class="card">
-        <h1 class="center">Machine Learning</h1>
+        <h1 class="center">Artificial Intelliegence</h1>
         <div class="graph-introduction">
             
 <div class="flex flex-wrap justify-between items-center">
     <div class="mx-auto">
-        <p>These notes will help you to learn and understand Machine Learning.</p>
+        <p>These notes will help you to learn and understand how Artificial Intelligence relates to other topics.</p>
     </div>
     <!-- <div class="mx-auto">
         <amp-img src="/TODO.png" width="200" height="200" layout="fixed">
@@ -199,85 +199,78 @@
      <concept-map id="ConceptMap">
      
 
-<g-settings layoutRandomSeed="0"></g-settings>
+<g-settings layoutRandomSeed="3"></g-settings>
 
 <g-node id="centraltopic" group="title" image="/TODO.svg">
-    <g-label visible="true">Machine Learning</g-label>
+    <g-label visible="true">Artificial Intelligence</g-label>
 
-        <g-edge to="mldef" label=""></g-edge>
-        <g-node id="mldef" group="">
-            <g-label>Definition here TODO</g-label>
+        <g-edge to="aidef" label="definition"></g-edge>
+        <g-node id="aidef" group="terminology">
+            <g-label>A high-level, umbrella term for when machines or tools have cognitive capabilities (memory, knowing, perceiving, reasoning) and exhibit forms of intelligence</g-label>
         </g-node>
         
-        
-
         <g-edge to="ml" label=""></g-edge>
         <g-node id="ml" group="">
             <g-label>Machine Learning</g-label>
 
-            <g-edge to="nlp" label=""></g-edge>
-            <g-node id="nlp" group="">
-                <g-label>Natural Language Processing (NLP)</g-label>
-
-                <g-edge to="nlp-translate" label=""></g-edge>
-                <g-node id="nlp-translate" group="">
-                    <g-label>Language Translation</g-label>
-                </g-node>
-                
-                <g-edge to="nlp-class" label=""></g-edge>
-                <g-node id="nlp-class" group="">
-                    <g-label>Classification</g-label>
-                </g-node>
-                
-                <g-edge to="nlp-question" label=""></g-edge>
-                <g-node id="nlp-question" group="">
-                    <g-label>Question Answering</g-label>
-                </g-node>
+            <g-edge to="mldef" label=""></g-edge>
+            <g-node id="mldef" group="terminology">
+                <g-label>Statistical tools for learning from data</g-label>
             </g-node>
-            
-            <g-edge to="speech" label=""></g-edge>
-            <g-node id="speech" group="">
-                <g-label>Speech</g-label>
-
-                <g-edge to="speech-txt2" label=""></g-edge>
-                <g-node id="speech-txt2" group="">
-                    <g-label>Text to Speech</g-label>
-                </g-node>
-            </g-node>
-            
-            <g-edge to="compvis" label=""></g-edge>
-            <g-node id="compvis" group="">
-                <g-label>Computer Vision</g-label>
-            </g-node>
-            
-            <g-edge to="robotics" label=""></g-edge>
-            <g-node id="robotics" group="">
-                <g-label>Robotics</g-label>
-            </g-node>
-            
-            <g-edge to="dl" label=""></g-edge>
-            <g-node id="dl" group="">
-                <g-label>Deep Learning</g-label>
-
-                <g-edge to="dld-dnn" label=""></g-edge>
-                <g-node id="dld-dnn" group="">
-                    <g-label>Deep Neural Networks</g-label>
-                </g-node>
-                
-                
-            </g-node>
-            
-            <g-edge to="classicml" label=""></g-edge>
-            <g-node id="classicml" group="">
-                <g-label>Classic Machine Learning</g-label>
-            </g-node>
-            
-            
             
             
         </g-node>
         
-        
+        <g-edge to="ds" label=""></g-edge>
+        <g-node id="ds" group="">
+            <g-label>Data Science</g-label>
+
+            <g-edge to="dsdef" label=""></g-edge>
+            <g-node id="dsdef" group="terminology">
+                <g-label>Techniques for analysing, understanding and gaining insights from data</g-label>
+            </g-node>
+            
+            <g-edge to="dsfocus" label=""></g-edge>
+            <g-node id="dsfocus" group="">
+                <g-label>Fundamental areas</g-label>
+
+                <g-edge to="dsprob" label=""></g-edge>
+                <g-node id="dsprob" group="">
+                    <g-label>Probability</g-label>
+                </g-node>
+                
+                <g-edge to="dsstat" label=""></g-edge>
+                <g-node id="dsstat" group="">
+                    <g-label>Statistics</g-label>
+                </g-node>
+                
+                <g-edge to="dslinalg" label=""></g-edge>
+                <g-node id="dslinalg" group="">
+                    <g-label>Linear Algebra</g-label>
+                </g-node>
+                
+                <g-edge to="dsnum" label=""></g-edge>
+                <g-node id="dsnum" group="">
+                    <g-label>Numerical Optimisation</g-label>
+                </g-node>
+
+                <g-edge to="dsvis" label=""></g-edge>
+                <g-node id="dsvis" group="">
+                    <g-label>Data Visualisation</g-label>
+                </g-node>
+                
+                                
+                <g-edge to="dsprog" label=""></g-edge>
+                <g-node id="dsprog" group="">
+                    <g-label>Computer Programming</g-label>
+                </g-node>
+                
+                
+
+            </g-node>
+            
+            
+        </g-node>
         
         
        

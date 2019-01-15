@@ -14,12 +14,23 @@
     
     
     <item>
-      <title>Learn TensorFlow</title>
-      <link>https://hackthe.ai/machinelearning/libraries/tensorflow/</link>
-      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      <title></title>
+      <link>https://hackthe.ai/ai/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://hackthe.ai/machinelearning/libraries/tensorflow/</guid>
-      <description>Notes to help you learn and understand TensorFlow</description>
+      <guid>https://hackthe.ai/ai/</guid>
+      <description> These notes will help you to learn and understand how Artificial Intelligence relates to other topics.
+  --    Artificial Intelligence  A high-level, umbrella term for when machines or tools have cognitive capabilities (memory, knowing, perceiving, reasoning) and exhibit forms of intelligence   Machine Learning  Statistical tools for learning from data    Data Science  Techniques for analysing, understanding and gaining insights from data   Fundamental areas  Probability   Statistics   Linear Algebra   Numerical Optimisation   Data Visualisation   Computer Programming      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://hackthe.ai/machinelearning/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackthe.ai/machinelearning/</guid>
+      <description> These notes will help you to learn and understand Machine Learning.
+  --    Machine Learning  Definition here TODO   Machine Learning  Natural Language Processing (NLP)  Language Translation   Classification   Question Answering    Speech  Text to Speech    Computer Vision   Robotics   Deep Learning  Deep Neural Networks    Classic Machine Learning     </description>
     </item>
     
   </channel>
