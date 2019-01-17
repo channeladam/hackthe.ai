@@ -8,10 +8,20 @@
     
     
     
-    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jan 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://hackthe.ai/machinelearning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://hackthe.ai/machinelearning/machinelearning/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hackthe.ai/machinelearning/machinelearning/</guid>
+      <description> These notes will help you to learn and understand Machine Learning.
+  --    Machine Learning  Definition here TODO   Machine Learning  Natural Language Processing (NLP)  Language Translation   Classification   Question Answering    Speech  Text to Speech    Computer Vision   Robotics   Deep Learning  Deep Neural Networks    Classic Machine Learning     </description>
+    </item>
     
     <item>
       <title>Learn TensorFlow</title>
