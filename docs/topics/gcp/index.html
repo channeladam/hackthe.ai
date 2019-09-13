@@ -50,7 +50,7 @@
 <g-edge to=storageproducts label=lifecycle></g-edge><g-edge from=storageproducts to=ingestionproducts label=lifecycle></g-edge><g-edge from=ingestionproducts to=analyticsproducts label=lifecycle></g-edge><g-edge from=analyticsproducts to=machinelearningproducts label=lifecycle></g-edge><g-edge from=machinelearningproducts to=servingproducts label=lifecycle></g-edge><g-node id=ingestionproducts group=h3><g-label>2/5 - Ingestion Products</g-label>
 <g-edge to=computeengine></g-edge><g-edge to=gke></g-edge><g-edge to=cloudfunctions></g-edge><g-edge to=cloudpubsub></g-edge><g-node id=cloudpubsub group=linkbox href=/topics/gcp/cloudpubsub#Graph><g-label>Cloud Pub/Sub</g-label></g-node>
 <g-edge to=clouddataflow></g-edge><g-node id=clouddataflow group=linkbox href=/topics/gcp/clouddataflow#Graph><g-label>Cloud Dataflow</g-label></g-node>
-<g-edge to=cloudcomposer></g-edge><g-node id=cloudcomposer><g-label>Cloud Composer</g-label></g-node></g-node>
+<g-edge to=cloudcomposer></g-edge><g-node id=cloudcomposer group=linkbox href=/topics/gcp/cloudcomposer#Graph><g-label>Cloud Composer</g-label></g-node></g-node>
 <g-node id=analyticsproducts group=h3><g-label>3/5 - Analytics Products</g-label>
 <g-edge to=clouddataprep></g-edge><g-node id=clouddataprep group=linkbox href=/topics/gcp/clouddataprep/#Graph><g-label>Cloud Dataprep</g-label></g-node>
 <g-edge to=bigquery></g-edge><g-node id=bigquery group=linkbox href=/topics/gcp/bigquery/#Graph><g-label>BigQuery</g-label></g-node>
