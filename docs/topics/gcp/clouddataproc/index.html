@@ -100,7 +100,7 @@
 <g-edge to=cdprocfeature10></g-edge><g-node id=cdprocfeature10><g-label>Does NOT support Spark Structured Streaming (streaming service on top of Spark SQL)</g-label></g-node>
 <g-edge to=cdprocfeature11></g-edge><g-node id=cdprocfeature11><g-label>Apache Bigtop</g-label>
 <g-edge to=bigtopdef label=definition></g-edge><g-node id=bigtopdef group=definition><g-label>Open source project that automates packaging, deployment and integration of other projects in the Hadoop ecosystem</g-label></g-node>
-<g-edge to=bigtopfeautres></g-edge><g-node id=bigtopfeautres><g-label>Features</g-label>
+<g-edge to=bigtopfeautres></g-edge><g-node id=bigtopfeautres collapsed=true><g-label>Features</g-label>
 <g-edge to=bigtopfeature1></g-edge><g-node id=bigtopfeature1><g-label>Gathers the core Hadoop components and ensures the configuration works</g-label></g-node>
 <g-edge to=bigtopfeature2></g-edge><g-node id=bigtopfeature2><g-label>Uses Jenkins for continuous integration testing</g-label></g-node>
 <g-edge to=bigtopfeature3></g-edge><g-node id=bigtopfeature3><g-label>Ensures the default Dataproc clusters perform well - and eliminates elements that are not needed and are wasting resources</g-label></g-node>
@@ -115,7 +115,7 @@
 <g-edge to=installscripts7></g-edge><g-node id=installscripts7><g-label>Example scripts available in public bucket gs://dataproc-initialization-actions</g-label></g-node>
 <g-edge to=installscripts8></g-edge><g-node id=installscripts8><g-label>Default --initialization-action-timeout is 10 minutes (10m)</g-label></g-node></g-node>
 <g-edge to=bigtopfeature6></g-edge><g-node id=bigtopfeature6><g-label>Modify cluster properties - e.g. common config files (core-site.xml); or specify by file_prefix:property=value in gcloud SDK</g-label></g-node></g-node></g-node>
-<g-edge to=cdprocfeature12></g-edge><g-node id=cdprocfeature12><g-label>Cloud DataProc Workflow Template</g-label>
+<g-edge to=cdprocfeature12></g-edge><g-node id=cdprocfeature12 collapsed=true><g-label>Cloud DataProc Workflow Template</g-label>
 <g-edge to=wftemplate1></g-edge><g-node id=wftemplate1><g-label>YAML file processed through a Directed Acyclic Graph</g-label></g-node>
 <g-edge to=wftemplate2></g-edge><g-node id=wftemplate2><g-label>Can do lifecycle of actions - create cluster, select existing cluster, submit jobs, hold jobs for submission until dependencies can complete, delete cluster</g-label></g-node>
 <g-edge to=wftemplate3></g-edge><g-node id=wftemplate3><g-label>gcloud and REST; NOT UI Console</g-label></g-node>

@@ -7,8 +7,69 @@
 <a href=#Text>Text</a>&nbsp;|&nbsp;
 <a href=#>Top</a></small></div><div class=paper-outer><div class="paper-inner mx-auto"><div class=card-container><div id=Text class=card><concept-map id=ConceptMap><g-settings><g-layout randomseed=948769></g-layout><g-initialposition scale=0.8 initialfocusaction=minimal></g-initialposition></g-settings><g-node id=centraltopic group=title><g-label show=true>Machine Learning</g-label>
 <g-edge to=ai label="is a field of"></g-edge><g-node id=ai group=linkbox href=/topics/ai/#Graph><g-label>Artificial Intelligence</g-label></g-node>
-<g-edge to=mldef label=definition></g-edge><g-node id=mldef group=definition><g-label>Statistical tools for learning from data</g-label></g-node>
-<g-edge to=mltypes></g-edge><g-node id=mltypes><g-label>Types of Machine Learning</g-label>
+<g-edge to=mldef label=definition></g-edge><g-node id=mldef group=definition><g-label>Statistical tools for learning from data in order to derive predictive insights. Pattern recognition from examples.</g-label></g-node>
+<g-edge to=terms></g-edge><g-node id=terms collapsed=true><g-label>Terminology</g-label>
+<g-edge to=term1></g-edge><g-node id=term1><g-label>Label - a correct output for an input - a fact or true answer</g-label></g-node>
+<g-edge to=term2></g-edge><g-node id=term2><g-label>Input - a variable used to predict the label</g-label></g-node>
+<g-edge to=term3></g-edge><g-node id=term3><g-label>Example - a set of inputs and a corresponding label</g-label></g-node>
+<g-edge to=term4></g-edge><g-node id=term4><g-label>Model - a mathematics function that takes input variables and tries to approximate the label</g-label></g-node>
+<g-edge to=term5></g-edge><g-node id=term5><g-label>Training - adjusting the model to minimise the error between the approximated label and the actual label</g-label></g-node>
+<g-edge to=term6></g-edge><g-node id=term6><g-label>Prediction - the output of the Model on unlabelled data</g-label></g-node>
+<g-edge to=term7></g-edge><g-node id=term7><g-label>Hyper-parameter tuning</g-label></g-node>
+<g-edge to=term8></g-edge><g-node id=term8><g-label>Back-propagation</g-label></g-node>
+<g-edge to=term9></g-edge><g-node id=term9><g-label>Epoch - one traversal through the entire training set</g-label></g-node>
+<g-edge to=term10></g-edge><g-node id=term10><g-label>Gradient Descent - optimisation - the process of reducing the error</g-label></g-node>
+<g-edge to=term11></g-edge><g-node id=term11><g-label>Batch size - the amount of data that the error is computed on</g-label></g-node>
+<g-edge to=term12></g-edge><g-node id=term12><g-label>Weights - the parameters of a function that are optimised</g-label></g-node>
+<g-edge to=term13></g-edge><g-node id=term13><g-label>Evaluation - periodically determining whether the model is good enough, based on a set of metrics</g-label></g-node>
+<g-edge to=term14></g-edge><g-node id=term14><g-label>Training - the process of optimising the weights, including gradient descent and evaluation</g-label></g-node>
+<g-edge to=term15></g-edge><g-node id=term15><g-label>Softmax - helps handle multiple labels - all values are normalised to sum to one</g-label></g-node>
+<g-edge to=term16></g-edge><g-node id=term16><g-label>Over-fitting - the model does not generalise very well for unseen examples</g-label></g-node>
+<g-edge to=term17></g-edge><g-node id=term17><g-label>Under-fitting - the model is too inaccurate</g-label></g-node>
+<g-edge to=term18></g-edge><g-node id=term18><g-label>Feature Engineering - using insights to calculate or engineer extra features/inputs</g-label></g-node>
+<g-edge to=term19></g-edge><g-node id=term19><g-label>Neuron - one unit of combining inputs</g-label></g-node>
+<g-edge to=term20></g-edge><g-node id=term20><g-label>Activation Function</g-label></g-node>
+<g-edge to=term21></g-edge><g-node id=term21><g-label>Hidden Layer - a set of neurons that operate on the same set of inputs</g-label></g-node>
+<g-edge to=term22></g-edge><g-node id=term22><g-label>Features - transformations of inputs, typically using an Activation Function</g-label></g-node>
+<g-edge to=term23></g-edge><g-node id=term23><g-label>Ground Truth</g-label></g-node>
+<g-edge to=term24></g-edge><g-node id=term24><g-label>Error = ground truth value - prediction value</g-label></g-node>
+<g-edge to=term25></g-edge><g-node id=term25><g-label>Root Mean Squared Error (RMSE) - for Regression - square the error (so it becomes positive) and take the mean, then square rooted</g-label></g-node>
+<g-edge to=term26></g-edge><g-node id=term26><g-label>Cross-Entropy - differentiable error value for Classification - the log loss</g-label></g-node>
+<g-edge to=term27></g-edge><g-node id=term27><g-label>Confusion Matrix - for evaluation of a model - True Positives (TP), False Positives (FP), False Negatives (FN), True Negatives (TN)</g-label></g-node>
+<g-edge to=term28></g-edge><g-node id=term28><g-label>Accuracy - intuitive measure of skill for classifiers if dataset is balanced - the fraction that is correct (fails if dataset is unbalanced)</g-label></g-node>
+<g-edge to=term29></g-edge><g-node id=term29><g-label>Precision - use when what you are trying to find is common; accuracy when a classifier is positive ; positive predictive value = TP / (TP + FP) (good if dataset is unbalanced)</g-label></g-node>
+<g-edge to=term30></g-edge><g-node id=term30><g-label>Recall - use when what you are trying to find is rare; accuracy when the truth is positive ; true positive rate = TP / (TP + FN) (good if dataset is unbalanced)</g-label></g-node>
+<g-edge to=term31></g-edge><g-node id=term31><g-label>Training Dataset</g-label></g-node>
+<g-edge to=term32></g-edge><g-node id=term32><g-label>Validation Dataset</g-label></g-node>
+<g-edge to=term33></g-edge><g-node id=term33><g-label>Test Dataset</g-label></g-node>
+<g-edge to=term34></g-edge><g-node id=term34><g-label>Cross-validation - if Test Dataset is rare, use different splits of training and validation datasets</g-label></g-node></g-node>
+<g-edge to=mlsteps></g-edge><g-node id=mlsteps><g-label>ML Steps</g-label>
+<g-edge to=mlstep1></g-edge><g-node id=mlstep1><g-label>1. Explore the data</g-label></g-node>
+<g-edge to=mlstep2></g-edge><g-node id=mlstep2><g-label>2. Split data into train/validation/test datasets</g-label></g-node>
+<g-edge to=mlstep3></g-edge><g-node id=mlstep3><g-label>3. Benchmark the performance to be obtained</g-label></g-node></g-node>
+<g-edge to=mlclasses></g-edge><g-node id=mlclasses><g-label>Classes of Machine Learning</g-label>
+<g-edge to=supervised></g-edge><g-node id=supervised><g-label>Supervised Learning</g-label>
+<g-edge to=superdef label=definition></g-edge><g-node id=superdef group=definition><g-label>Learning from past examples to predict future values</g-label></g-node>
+<g-edge to=supermodeltypes></g-edge><g-node id=supermodeltypes><g-label>Model Types</g-label>
+<g-edge to=regression></g-edge><g-node id=regression><g-label>Regression</g-label>
+<g-edge to=regdef label=definition></g-edge><g-node id=regdef group=definition><g-label>Label has a continuous real value</g-label></g-node></g-node>
+<g-edge to=classification></g-edge><g-node id=classification><g-label>Classification</g-label>
+<g-edge to=classdef label=definition></g-edge><g-node id=classdef group=definition><g-label>Label has a discrete set of values or classes</g-label></g-node></g-node></g-node>
+<g-edge to=superdata></g-edge><g-node id=superdata><g-label>Datasets</g-label>
+<g-edge to=whatmakesgooddata></g-edge><g-node id=whatmakesgooddata><g-label>What makes a good Dataset?</g-label>
+<g-edge to=wmgd1></g-edge><g-node id=wmgd1><g-label>Positive examples</g-label></g-node>
+<g-edge to=wmgd2></g-edge><g-node id=wmgd2><g-label>Negative examples</g-label></g-node>
+<g-edge to=wmgd3></g-edge><g-node id=wmgd3><g-label>Negative examples that are near misses</g-label></g-node>
+<g-edge to=wmgd4></g-edge><g-node id=wmgd4><g-label>Exhaustive coverage of examples</g-label></g-node>
+<g-edge to=wmgd5></g-edge><g-node id=wmgd5><g-label>Examples of outliers - so they can be learned and handled gracefully</g-label></g-node></g-node></g-node>
+<g-edge to=nn></g-edge><g-node id=nn><g-label>Neural Networks</g-label>
+<g-edge to=neuronline></g-edge><g-node id=neuronline><g-label>Single neuron line function - w.x1 + w.x2 &gt; bias ?</g-label></g-node>
+<g-edge to=optimisation></g-edge><g-node id=optimisation><g-label>Optimisation - Gradient Descent - iteratively reducing the error of output from the label</g-label></g-node></g-node></g-node>
+<g-edge to=unsuper></g-edge><g-node id=unsuper><g-label>Unsupervised Learning</g-label>
+<g-edge to=unsuperdef label=definition></g-edge><g-node id=unsuperdef group=definition><g-label>Using unlabelled data to discover relationships between data</g-label></g-node>
+<g-edge to=clustering></g-edge><g-node id=clustering><g-label>Clustering</g-label></g-node></g-node>
+<g-edge to=semisuper></g-edge><g-node id=semisuper><g-label>Semi-supervised Learning</g-label></g-node></g-node>
+<g-edge to=mltypes></g-edge><g-node id=mltypes><g-label>Applications of Machine Learning</g-label>
 <g-edge to=nlp></g-edge><g-node id=nlp group=linkbox href=/topics/machinelearning/nlp/#Graph><g-label>Natural Language Processing (NLP)</g-label>
 <g-edge to=nlpdef></g-edge><g-node id=nlpdef group=definition><g-label>The processing of any natural language in order to understand both its grammatical syntax and semantics</g-label></g-node></g-node>
 <g-edge to=cv></g-edge><g-node id=cv group=linkbox href=/topics/machinelearning/computervision/#Graph><g-label>Computer Vision</g-label>
