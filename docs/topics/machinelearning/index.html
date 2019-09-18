@@ -42,12 +42,14 @@
 <g-edge to=term31></g-edge><g-node id=term31><g-label>Training Dataset</g-label></g-node>
 <g-edge to=term32></g-edge><g-node id=term32><g-label>Validation Dataset</g-label></g-node>
 <g-edge to=term33></g-edge><g-node id=term33><g-label>Test Dataset</g-label></g-node>
-<g-edge to=term34></g-edge><g-node id=term34><g-label>Cross-validation - if Test Dataset is rare, use different splits of training and validation datasets</g-label></g-node></g-node>
+<g-edge to=term34></g-edge><g-node id=term34><g-label>Cross-validation - if Test Dataset is rare, use different splits of training and validation datasets</g-label></g-node>
+<g-edge to=term35></g-edge><g-node id=term35><g-label>Dense features - continuous numbers; Neural Network is good for these</g-label></g-node>
+<g-edge to=term36></g-edge><g-node id=term36><g-label>Sparse/Wide features - independent, discrete, categorical values; Linear models are good for these</g-label></g-node></g-node>
 <g-edge to=mlsteps></g-edge><g-node id=mlsteps><g-label>ML Steps</g-label>
 <g-edge to=mlstep1></g-edge><g-node id=mlstep1><g-label>1. Explore the data</g-label></g-node>
 <g-edge to=mlstep2></g-edge><g-node id=mlstep2><g-label>2. Split data into train/validation/test datasets</g-label></g-node>
 <g-edge to=mlstep3></g-edge><g-node id=mlstep3><g-label>3. Benchmark the performance to be obtained</g-label></g-node></g-node>
-<g-edge to=mlclasses></g-edge><g-node id=mlclasses><g-label>Classes of Machine Learning</g-label>
+<g-edge to=mlclasses></g-edge><g-node id=mlclasses collapsed=true><g-label>Classes of Machine Learning</g-label>
 <g-edge to=supervised></g-edge><g-node id=supervised><g-label>Supervised Learning</g-label>
 <g-edge to=superdef label=definition></g-edge><g-node id=superdef group=definition><g-label>Learning from past examples to predict future values</g-label></g-node>
 <g-edge to=supermodeltypes></g-edge><g-node id=supermodeltypes><g-label>Model Types</g-label>
@@ -69,7 +71,7 @@
 <g-edge to=unsuperdef label=definition></g-edge><g-node id=unsuperdef group=definition><g-label>Using unlabelled data to discover relationships between data</g-label></g-node>
 <g-edge to=clustering></g-edge><g-node id=clustering><g-label>Clustering</g-label></g-node></g-node>
 <g-edge to=semisuper></g-edge><g-node id=semisuper><g-label>Semi-supervised Learning</g-label></g-node></g-node>
-<g-edge to=mltypes></g-edge><g-node id=mltypes><g-label>Applications of Machine Learning</g-label>
+<g-edge to=mltypes></g-edge><g-node id=mltypes collapsed=true><g-label>Applications of Machine Learning</g-label>
 <g-edge to=nlp></g-edge><g-node id=nlp group=linkbox href=/topics/machinelearning/nlp/#Graph><g-label>Natural Language Processing (NLP)</g-label>
 <g-edge to=nlpdef></g-edge><g-node id=nlpdef group=definition><g-label>The processing of any natural language in order to understand both its grammatical syntax and semantics</g-label></g-node></g-node>
 <g-edge to=cv></g-edge><g-node id=cv group=linkbox href=/topics/machinelearning/computervision/#Graph><g-label>Computer Vision</g-label>
@@ -88,4 +90,20 @@
 <g-edge to=adoptionstrategy></g-edge><g-node id=adoptionstrategy><g-label>AI Adoption Strategy</g-label>
 <g-edge to=adoption1></g-edge><g-node id=adoption1><g-label>Preference 1 - Use pre-built AI services/models</g-label></g-node>
 <g-edge to=adoption2></g-edge><g-node id=adoption2><g-label>Preference 2 - Customise pre-built AI services/models</g-label></g-node>
-<g-edge to=adoption3></g-edge><g-node id=adoption3><g-label>Preference 3 - Create new models => rule of thumb: only when you have > 100k high-quality examples</g-label></g-node></g-node></g-node></concept-map></div></div></div></div></main><script>document.addEventListener('DOMContentLoaded',function(){let graph=new ChannelAdamConceptMap(document.getElementById('ConceptMap'));graph.render(document.getElementById('GraphContainer'),'centraltopic');},false);</script><footer><div class="page-width mx-auto flex flex-wrap items-center justify-around"><small>Copyright &copy; 2018-2019 by Adam Craven. All rights reserved.<br><br></small><small class=center><a href=https://creativecommons.org/licenses/by/4.0/ rel=license target=_blank><img alt="Creative Commons Licence" src=https://licensebuttons.net/l/by/4.0/88x31.png style=border-width:0></a><br>This work is licensed under a<br><a href=https://creativecommons.org/licenses/by/4.0/ rel=license target=_blank>Creative Commons Attribution 4.0 International License</a>.</small></div></footer></body></html>
+<g-edge to=adoption3></g-edge><g-node id=adoption3><g-label>Preference 3 - Create new models => rule of thumb: only when you have > 100k high-quality examples</g-label></g-node></g-node>
+<g-edge to=workflowoptions></g-edge><g-node id=workflowoptions><g-label>Workflow Options</g-label>
+<g-edge to=workflowopt1></g-edge><g-node id=workflowopt1 group=linkbox href=/topics/machinelearning/kubeflow/#Graph><g-label>Kubeflow Pipelines</g-label></g-node>
+<g-edge to=workflowopt2></g-edge><g-node id=workflowopt2><g-label>TODO</g-label></g-node></g-node>
+<g-edge to=featureeng></g-edge><g-node id=featureeng><g-label>Feature Engineering</g-label>
+<g-edge to=featureengtips></g-edge><g-node id=featureengtips collapsed=true><g-label>Tips</g-label>
+<g-edge to=featureengtip1></g-edge><g-node id=featureengtip1><g-label>Have a reasonable hypothesis for why a specific feature may be relevant for the problem, otherwise discard it</g-label></g-node>
+<g-edge to=featureengtip2></g-edge><g-node id=featureengtip2><g-label>The feature value must be known at the time when a prediction is needed - don't use historical data that was later determined - careful when training on data from a Data Warehouse!</g-label></g-node>
+<g-edge to=featureengtip3></g-edge><g-node id=featureengtip3><g-label>Ensure the feature data is legal and ethical to use</g-label></g-node>
+<g-edge to=featureengtip4></g-edge><g-node id=featureengtip4><g-label>Feature values need to be numerical WITH a meaningful magnitude; or at least representable in a numeric form with a vector representation...</g-label></g-node>
+<g-edge to=featureengtip5></g-edge><g-node id=featureengtip5><g-label>Must have enough examples of each feature input value - e.g. at least 5 examples or samples; for real values you may need to group/bin them together</g-label></g-node>
+<g-edge to=featureengtip6></g-edge><g-node id=featureengtip6><g-label>Discard values that are too specific - like a transaction id</g-label></g-node>
+<g-edge to=featureengtip7></g-edge><g-node id=featureengtip7><g-label>One-hot encode categorical values - a vector/list representing each input category; only one item in the list has a value of 1 and the others are zero</g-label></g-node>
+<g-edge to=featureengtip8></g-edge><g-node id=featureengtip8><g-label>Create a vocabulary in training pre-processing to create a vocab of keys</g-label></g-node>
+<g-edge to=featureengtip9></g-edge><g-node id=featureengtip9><g-label>Don't mix magic numbers representing missing data (e.g. null or -1) with real data - perhaps have 2 values - one for whether the value was provided and another for the actual value (or zero if was not provided)</g-label></g-node>
+<g-edge to=featureengtip10></g-edge><g-node id=featureengtip10><g-label>Use feature crosses - e.g. using intuition like a yellow car in New York is likely a taxi, so combine 2 features so a yellow car in another city is not misrepresented because of the training data from New York.</g-label></g-node>
+<g-edge to=featureendtip11></g-edge><g-node id=featureendtip11><g-label>Use a wide and deep network if you have both dense and sparse features</g-label></g-node></g-node></g-node></g-node></concept-map></div></div></div></div></main><script>document.addEventListener('DOMContentLoaded',function(){let graph=new ChannelAdamConceptMap(document.getElementById('ConceptMap'));graph.render(document.getElementById('GraphContainer'),'centraltopic');},false);</script><footer><div class="page-width mx-auto flex flex-wrap items-center justify-around"><small>Copyright &copy; 2018-2019 by Adam Craven. All rights reserved.<br><br></small><small class=center><a href=https://creativecommons.org/licenses/by/4.0/ rel=license target=_blank><img alt="Creative Commons Licence" src=https://licensebuttons.net/l/by/4.0/88x31.png style=border-width:0></a><br>This work is licensed under a<br><a href=https://creativecommons.org/licenses/by/4.0/ rel=license target=_blank>Creative Commons Attribution 4.0 International License</a>.</small></div></footer></body></html>
