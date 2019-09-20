@@ -8,6 +8,12 @@
 <a href=#>Top</a></small></div><div class=paper-outer><div class="paper-inner mx-auto"><div class=card-container><div id=Text class=card><concept-map id=ConceptMap><g-settings><g-layout randomseed=390095 improvedlayout=true></g-layout><g-initialposition scale=0.8 initialfocusaction=minimal></g-initialposition></g-settings><g-node id=centraltopic group=title image><g-label show=true>Google Cloud Platform (GCP) Overview</g-label>
 <g-edge to=customers></g-edge><g-node id=customers><g-label>Google Cloud Customers</g-label>
 <g-edge to=gcpcustomerstudy></g-edge><g-node id=gcpcustomerstudy group=linkbox href="https://cloud.google.com/customers/#/products=Big_Data_Analytics"><g-label>Showcase of Big Data Customers</g-label></g-node></g-node>
+<g-edge to=featureengineering></g-edge><g-node id=featureengineering><g-label>Feature Engineering</g-label>
+<g-edge to=fewhere></g-edge><g-node id=fewhere><g-label>Where to do it?</g-label>
+<g-edge to=fewhere1></g-edge><g-node id=fewhere1><g-label>On the fly, as data is sent to the input function</g-label></g-node>
+<g-edge to=fewhere2></g-edge><g-node id=fewhere2><g-label>A separate pre-processing step on all the data, before the training step - in Dataflow so it is scaled and distributed; also good for time-windowed aggregations in a real-time pipeline (and use Dataflow for the predictions)</g-label>
+<g-edge to=fewhere2b></g-edge><g-node id=fewhere2b><g-label>Alternative is to do pre-processing in plain Python Dataflow, in order to reuse the same pre-processing steps for inference on the serving inputs of the trained model</g-label></g-node></g-node>
+<g-edge to=fewhere3></g-edge><g-node id=fewhere3><g-label>Do pre-processing in Dataflow and create a set of pre-processed features using tf.transform (min, max, vocab, etc. stored in metadata.json) so they are part of the actual model graph and can be used in TensorFlow during serving/inference</g-label></g-node></g-node></g-node>
 <g-edge to=coreinfra></g-edge><g-node id=coreinfra collapsed=false><g-label>Google's core infrastructure</g-label>
 <g-edge to=security></g-edge><g-node id=security collapsed=true><g-label>Level 1: Security</g-label>
 <g-edge to=seccomms></g-edge><g-node id=seccomms><g-label>Communications to Google Cloud are encrypted in-transit, with multiple layers of security to protect against denial of service attacks , backed by Google security teams 24/7</g-label></g-node>
@@ -89,7 +95,7 @@
 <g-edge to=aibbsight></g-edge><g-node id=aibbsight collapsed=false><g-label>Sight</g-label>
 <g-edge to=aibbsight1></g-edge><g-node id=aibbsight1 group=linkbox href=/topics/gcp/cloudvisionapi#Graph><g-label>Cloud Vision API</g-label></g-node>
 <g-edge to=aibbsight2></g-edge><g-node id=aibbsight2 group=linkbox href=/topics/gcp/cloudvideointelligenceapi#Graph><g-label>Cloud Video Intelligence API</g-label></g-node>
-<g-edge to=aibbsight3></g-edge><g-node id=aibbsight3 group=linkbox href=/topics/gcp/automlvision#Graph><g-label>AutoML Vision</g-label></g-node></g-node>
+<g-edge to=aibbsight3></g-edge><g-node id=aibbsight3 group=linkbox href=/topics/gcp/cloudautomlvision#Graph><g-label>AutoML Vision</g-label></g-node></g-node>
 <g-edge to=aibblang></g-edge><g-node id=aibblang collapsed=false><g-label>Language</g-label>
 <g-edge to=aibblang1></g-edge><g-node id=aibblang1 collapsed=true><g-label>Cloud Translation API</g-label>
 <g-edge to=ctranslationapi label=definition></g-edge><g-node id=ctranslationapi group=definition><g-label>Converts text from one language to another</g-label></g-node>
