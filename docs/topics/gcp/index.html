@@ -5,10 +5,10 @@
 <small class=nowrap>Left-tap &amp; drag to move.</small>
 <small class=nowrap>Mouse-wheel/pinch to zoom.</small></div></div><div id=GraphContainer class=graph-container></div><div class="ml2 left-align"><small><a href=#Graph>Knowledge Graph</a>&nbsp;|&nbsp;
 <a href=#Text>Text</a>&nbsp;|&nbsp;
-<a href=#>Top</a></small></div><div class=paper-outer><div class="paper-inner mx-auto"><div class=card-container><div id=Text class=card><concept-map id=ConceptMap><g-settings><g-layout randomseed=390095 improvedlayout=true></g-layout><g-initialposition scale=0.8 initialfocusaction=minimal></g-initialposition></g-settings><g-node id=centraltopic group=title image><g-label show=true>Google Cloud Platform (GCP) Overview</g-label>
+<a href=#>Top</a></small></div><div class=paper-outer><div class="paper-inner mx-auto"><div class=card-container><div id=Text class=card><concept-map id=ConceptMap><g-settings><g-layout randomseed=454457 improvedlayout=true></g-layout><g-initialposition scale=0.8 initialfocusaction=minimal></g-initialposition></g-settings><g-node id=centraltopic group=title image><g-label show=true>Google Cloud Platform (GCP) Overview</g-label>
 <g-edge to=customers></g-edge><g-node id=customers><g-label>Google Cloud Customers</g-label>
 <g-edge to=gcpcustomerstudy></g-edge><g-node id=gcpcustomerstudy group=linkbox href="https://cloud.google.com/customers/#/products=Big_Data_Analytics"><g-label>Showcase of Big Data Customers</g-label></g-node></g-node>
-<g-edge to=featureengineering></g-edge><g-node id=featureengineering><g-label>Feature Engineering</g-label>
+<g-edge to=featureengineering></g-edge><g-node id=featureengineering collapsed=true><g-label>Feature Engineering</g-label>
 <g-edge to=fewhere></g-edge><g-node id=fewhere><g-label>Where to do it?</g-label>
 <g-edge to=fewhere1></g-edge><g-node id=fewhere1><g-label>On the fly, as data is sent to the input function</g-label></g-node>
 <g-edge to=fewhere2></g-edge><g-node id=fewhere2><g-label>A separate pre-processing step on all the data, before the training step - in Dataflow so it is scaled and distributed; also good for time-windowed aggregations in a real-time pipeline (and use Dataflow for the predictions)</g-label>
@@ -79,7 +79,14 @@
 <g-edge to=cloudstorage></g-edge><g-node id=cloudstorage group=linkbox href=/topics/gcp/cloudstorage#Graph><g-label>Cloud Storage</g-label></g-node>
 <g-edge to=cloudsql></g-edge><g-node id=cloudsql group=linkbox href=/topics/gcp/cloudsql#Graph><g-label>Cloud SQL</g-label></g-node>
 <g-edge to=cloudspanner></g-edge><g-node id=cloudspanner group=linkbox href=/topics/gcp/cloudspanner#Graph><g-label>Cloud Spanner</g-label></g-node>
-<g-edge to=clouddatastore></g-edge><g-node id=clouddatastore group=linkbox href=/topics/gcp/clouddatastore#Graph><g-label>Cloud Datastore</g-label></g-node></g-node>
+<g-edge to=clouddatastore></g-edge><g-node id=clouddatastore group=linkbox href=/topics/gcp/clouddatastore#Graph><g-label>Cloud Datastore</g-label></g-node>
+<g-edge to=computestorage></g-edge><g-node id=computestorage collapsed=true><g-label>Compute Engine Disks</g-label>
+<g-edge to=computestoragelink></g-edge><g-node id=computestoragelink group=linkbox href=https://cloud.google.com/compute/docs/disks/><g-label>GCP doco on Compute Engine disk options</g-label></g-node>
+<g-edge to=persistentdisks></g-edge><g-node id=persistentdisks><g-label>Persistent Disks</g-label>
+<g-edge to=persistdiskdef label=definition></g-edge><g-node id=persistdiskdef group=definition><g-label>Disks that are attached to a VM (running in Compute Engine)</g-label></g-node>
+<g-edge to=persistdisk1></g-edge><g-node id=persistdisk1><g-label>Must be attached to a VM in the same zone</g-label></g-node></g-node>
+<g-edge to=snapshotlink></g-edge><g-node id=snapshotlink group=linkbox href=https://cloud.google.com/compute/docs/disks/create-snapshots><g-label>GCP doco on Snapshot creation</g-label></g-node>
+<g-edge to=snapshotbestpracticelinks></g-edge><g-node id=snapshotbestpracticelinks group=linkbox href=https://cloud.google.com/compute/docs/disks/snapshot-best-practices><g-label>GCP doco on Snapshot best practices</g-label></g-node></g-node></g-node>
 <g-node id=computeproducts><g-label>Compute Products</g-label>
 <g-edge to=computeengine></g-edge><g-node id=computeengine group=h4 collapsed=true><g-label>Compute Engine</g-label>
 <g-edge to=ce1></g-edge><g-node id=ce1><g-label>Infrastructure as a Service (IaaS)</g-label></g-node>
@@ -139,7 +146,9 @@
 <g-edge to=iam label="controlled by"></g-edge><g-node id=iam><g-label>Cloud Identity and Access Management (IAM)</g-label>
 <g-edge to=iamdef label=definition></g-edge><g-node id=iamdef group=definition><g-label>IAM policies control user access to resources</g-label></g-node></g-node>
 <g-edge to=zonesregions></g-edge><g-node id=zonesregions><g-label>Zones and Regions</g-label>
-<g-edge to=zoneregion label=definition></g-edge><g-node id=zoneregion group=definition><g-label>Physically organise the GCP resources</g-label></g-node></g-node></g-node></g-node></g-node>
+<g-edge to=zoneregion label=definition></g-edge><g-node id=zoneregion group=definition><g-label>Physically organise the GCP resources</g-label></g-node>
+<g-edge to=regiondef label=definition></g-edge><g-node id=regiondef group=definition><g-label>Region - independent geographic areas; a data centre in the world, consisting of 2 or more zones (most have 3 zones, some have 4 zones)</g-label></g-node>
+<g-edge to=zonedef label=definition></g-edge><g-node id=zonedef group=definition><g-label>Zone - a deployment area within a region; a single failure domain within a region (e.g. independent power supply, switch, etc).</g-label></g-node></g-node></g-node></g-node></g-node>
 <g-edge to=history></g-edge><g-node id=history collapsed=true><g-label>History of Google Inventions</g-label></g-node>
 <g-edge from=history to=2002gfs></g-edge><g-edge from=2002gfs to=2004mapreduce></g-edge><g-edge from=2004mapreduce to=2006bigtable></g-edge><g-edge from=2006bigtable to=2008dremil></g-edge><g-edge from=2008dremil to=2009collosus></g-edge><g-edge from=2009collosus to=2010flume></g-edge><g-edge from=2010flume to=2011megastore></g-edge><g-edge from=2011megastore to=2012spanner></g-edge><g-edge from=2012spanner to=2013pubsub></g-edge><g-edge from=2013pubsub to=2013millwheel></g-edge><g-edge from=2013millwheel to=2014f1></g-edge><g-edge from=2014f1 to=2015tensorflow></g-edge><g-edge from=2015tensorflow to=2017tpus></g-edge><g-node id=2002gfs><g-label>2002 - Google File System (GFS)</g-label>
 <g-edge to=gfsabout></g-edge><g-node id=gfsabout><g-label>For sharding and storing petabytes of data at scale</g-label></g-node>
