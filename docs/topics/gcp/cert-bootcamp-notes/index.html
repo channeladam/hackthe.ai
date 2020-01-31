@@ -6,7 +6,7 @@ max size of a single object is 5 TB"><meta property=og:type content=article><met
 object store (replace only), not a file store (can&rsquo;t open the file for writing)
 bucket names are globally unique
 can name a bucket like a domain name - e.g. files.[your name].com if you can prove you own your domain - create a CNAME record to point your subdomain to the storage bucket
-max size of a single object is 5 TB"><meta itemprop=wordCount content=5099><meta itemprop=keywords content><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://hackthe.ai/img/hacktheai/hacktheai-default-share-1.jpg><meta name=twitter:title content><meta name=twitter:description content="cloud storage 2c per gb per month 99.5% availability (5 out 1000 failures possibly) 11x9&rsquo;s durable
+max size of a single object is 5 TB"><meta itemprop=wordCount content=5679><meta itemprop=keywords content><meta name=twitter:card content=summary_large_image><meta name=twitter:image content=https://hackthe.ai/img/hacktheai/hacktheai-default-share-1.jpg><meta name=twitter:title content><meta name=twitter:description content="cloud storage 2c per gb per month 99.5% availability (5 out 1000 failures possibly) 11x9&rsquo;s durable
 object store (replace only), not a file store (can&rsquo;t open the file for writing)
 bucket names are globally unique
 can name a bucket like a domain name - e.g. files.[your name].com if you can prove you own your domain - create a CNAME record to point your subdomain to the storage bucket
@@ -96,15 +96,26 @@ scheduled
 - Createa transfer job into a jucket
 from storage bucket, a3 bucket, &hellip;,</p><h3 id=transfer-appliance>Transfer Appliance</h3><ul><li>offline data transfers</li><li>request transfer applicance</li><li>you manage encryption key</li><li>100TB, 480TB</li></ul><h2 id=cloud-cdn>Cloud CDN</h2><p>Charged for netwrok egress</p><p>costs of delivering content from a bucket vs. the CDN
 <a href=https://cloud.google.com/storage/pricing#network-pricing>https://cloud.google.com/storage/pricing#network-pricing</a>
-<a href=https://cloud.google.com/cdn/pricing>https://cloud.google.com/cdn/pricing</a></p><p>ADAM HERE:</p><h2 id=persistent-disk>Persistent disk</h2><ul><li><p>Prefer Cloud Storage, unless you need an actual file system!</p></li><li><p>must be attached to a VM</p></li><li><p>compute engine - create a VM</p></li><li><p>ssh
+<a href=https://cloud.google.com/cdn/pricing>https://cloud.google.com/cdn/pricing</a></p><h2 id=persistent-disk>Persistent disk</h2><ul><li><p>Prefer Cloud Storage, unless you need an actual file system!</p></li><li><p>must be attached to a VM</p></li><li><p>compute engine - create a VM</p></li><li><p>ssh
 install apache http server
-cd /var/www/html</p></li><li><p>under disks - has a &ldquo;standard persistent disk&rdquo;, in same zone as the VM</p></li><li><p>snapshot a disk</p><ul><li>on a schedule</li><li>stored in cloud storage - regional or multi-regional</li><li><p>create disk based on snapshot</p></li><li><p>uses:</p><ul><li>backup a persistent disk</li><li>move a disk to another region or zone</li><li>make a persistent disk larger</li></ul></li></ul></li><li><p>min 10GB to 64TB?</p></li><li><p>can add/create more disks - SSD or standard magenetic</p><ul><li>size of disk changes the IOPs</li></ul></li></ul><p>DO EXERCISE <a href=https://labs.roitraining.com/labs/793a-gcp03-disks-and-snapshots/index.html#0>https://labs.roitraining.com/labs/793a-gcp03-disks-and-snapshots/index.html#0</a></p><h2 id=encryption>Encryption</h2><ul><li>files broken into chunks</li><li>chunks encrypted with Data Encryption Key (DEK)</li><li>DEK is encrypted with Key Encryption Key (KEK)</li><li>Chunks stored multiple times on physical disks</li></ul><p>Key management
-- gogole managed - no config
-- KEK rotated frequqently
-- DEK rotation at least once every 5 years
-- customer managed - via KMS
-- customer supplied - outside of Google</p><p>Better to encrypt file before uploading it, rather than using a customer supplied key!</p><h2 id=cloud-key-management-service-kms>Cloud Key Management Service (KMS)</h2><ul><li>create a keyring and add keys to it</li><li>symmetric, asymmetric</li><li>rotation period, auto generated or own</li></ul><h2 id=apache-beam>apache beam</h2><ul><li>b for batch</li><li>eam for stream</li></ul><h2 id=bigtable>bigtable</h2><p>$1400 per month just for the instance
+cd /var/www/html</p></li><li><p>under disks - has a &ldquo;standard persistent disk&rdquo;, in same zone as the VM</p></li><li><p>snapshot a disk</p><ul><li>on a schedule</li><li>stored in cloud storage - regional or multi-regional</li><li><p>create disk based on snapshot</p></li><li><p>uses:</p><ul><li>backup a persistent disk</li><li>move a disk to another region or zone</li><li>make a persistent disk larger</li></ul></li></ul></li><li><p>min 10GB to 64TB?</p></li><li><p>can add/create more disks - SSD or standard magenetic</p><ul><li>size of disk changes the IOPs</li></ul></li></ul><p>DO EXERCISE <a href=https://labs.roitraining.com/labs/793a-gcp03-disks-and-snapshots/index.html#0>https://labs.roitraining.com/labs/793a-gcp03-disks-and-snapshots/index.html#0</a></p><p>#################
+#################
+ADAM HERE:
+##################
+#################</p><h2 id=encryption>Encryption</h2><ul><li>files broken into chunks</li><li>chunks encrypted with Data Encryption Key (DEK)</li><li>DEK is encrypted with Key Encryption Key (KEK)</li><li>Chunks stored multiple times on physical disks</li></ul><p>Key management
+- gogole managed - no config required
+- KEK rotated frequently
+- DEK rotation less often - data re-encryption required at least once every 5 years
+- customer managed - manage via Google Cloud KMS
+- customer supplied - manage outside of Google.
+- don&rsquo;t lose the key!
+- Better to encrypt file before uploading it, rather than using a customer supplied key!</p><h2 id=cloud-key-management-service-kms>Cloud Key Management Service (KMS)</h2><p><a href=https://cloud.google.com/kms/docs/quickstart>https://cloud.google.com/kms/docs/quickstart</a>
+- create a keyring and add keys to it
+- symmetric, asymmetric
+- rotation period, auto generated or own
+<a href=https://cloud.google.com/kms/docs/algorithms#key_purposes>https://cloud.google.com/kms/docs/algorithms#key_purposes</a></p><h2 id=apache-beam>apache beam</h2><ul><li>b for batch</li><li>eam for stream</li></ul><h2 id=bigtable>bigtable</h2><p>$1400 per month just for the instance in us-central-1
 noSQL
+fully managed
 not transactional
 like cassandra / hbase
 wide-column store</p><p>number of nodes dictates network capacity</p><p>Config:
@@ -112,7 +123,9 @@ wide-column store</p><p>number of nodes dictates network capacity</p><p>Config:
 - cluster id
 - region &amp; zone
 - choose number of nodes - min of 3 for prod
-- add a replicated cluster in a different region/zone</p><p>Price
+- add a replicated cluster in a different region/zone</p><p>Performance
+- Based on current node count and storage type.
+- Adding a cluster increases read throughput but not write throughput. When writing, Cloud Bigtable uses the additional throughput for replication.</p><p>Price
 - 1 cluster of 3 nodes AUD $1922/month
 - plus 1TB HDD $35/month</p><p>Schamas
 - tables
@@ -127,9 +140,15 @@ wide-column store</p><p>number of nodes dictates network capacity</p><p>Config:
 - timestamp is a bad row key - last tablet
 - GUID is good - random and distributed - but not helpful for a search based on an attribute of the data
 - Design based on the likely query predicate performed
-- good example: highway number - mile marker / sensor number - timestamp</p><p>Metadata
+- good example: highway number - mile marker / sensor number - timestamp</p><p><a href=https://cloud.google.com/bigtable/docs/schema-design#row-keys>https://cloud.google.com/bigtable/docs/schema-design#row-keys</a></p><p>Metadata
 - Table is assigned multiple tablets to store metadata
-- tablets are distributed over different disks</p><p>Use BigTable - when You need a place to store a huge amount of data (100TB plus) and you need extremely fast random access to individual records.</p><h2 id=firestore-datastore>firestore / datastore</h2><p>Datastore has been migrated to Firestore
+- tablets are distributed over different disks</p><p>Use BigTable - when You need a place to store a huge amount of data (100TB plus) and you need extremely fast random access to individual records.</p><p>Replication guidance</p><p>Replication for Cloud Bigtable copies your data across multiple regions, enabling you to isolate workloads and increase the availability and durability of your data. Learn more
+<a href=https://cloud.google.com/bigtable/help/replication/overview>https://cloud.google.com/bigtable/help/replication/overview</a></p><pre><code>Replication cannot be paused. All writes are automatically replicated to all clusters.
+Replication uses a primary-primary configuration with eventual consistency.
+Replicating writes between clusters requires additional CPU for each cluster in the instance.
+Provision enough nodes for each cluster to keep the cluster's average CPU utilization under the recommended threshold for your current number of clusters and app profile policy. For instances with 1 cluster or multiple clusters and single-cluster routing, keep average CPU utilization under 70%. For instances with 2 clusters and multi-cluster routing, keep CPU utilization under 35%. For instances with more than 2 clusters and multi-cluster routing, see additional configuration guidance.
+Routing and other client access patterns are configured by the application profile. If needed, you can create and customize additional profiles.
+</code></pre><h2 id=firestore-datastore>firestore / datastore</h2><p>Datastore has been migrated to Firestore
 no sql
 ACID transactional</p><p>indexes created by default on every property - so there are &ldquo;secondary indexes&rdquo; and more!</p><p>Firestore was purchased, Google liked it better than Datastore, but wanted to consolidate them</p><p>All datastore was migrated to Firestore in Datastore mode.</p><p>Runs on top of a shared instance of Spanner!! Same availability!</p><p>Config:
 - Mode
@@ -137,8 +156,8 @@ ACID transactional</p><p>indexes created by default on every property - so there
 - Datastore mode -
 - location
 - multi-region - eur, nam 99.999% (same as spanner) ~17c / GB-month + reads/write (1GB free)
-- single region - syd 99.99% (same as spanner) ~8c / GB-month + reads/write (1GB free)</p><p>1GB free tier!!
-so if small website data, then Firestore is the cheapest option!!</p><p>relational - datastore terminolgy
+- single region - syd 99.99% (same as spanner) ~8c / GB-month + reads/write (1GB free)</p><p>1GB storage + 50k entity reads + 50k small ops : DAILY FREE tier!!
+<a href=https://cloud.google.com/datastore/pricing>https://cloud.google.com/datastore/pricing</a></p><p>so if small website data, then Firestore is the cheapest option!!</p><p>relational - datastore terminolgy
 - tables - kinds
 - rows/records - entities
 - fields - properties
@@ -152,7 +171,7 @@ so if small website data, then Firestore is the cheapest option!!</p><p>relation
 - documents - entities
 - key-value pairs - properties
 - document name - key
-- sub-documents - entity groups</p><p>DO THE FIRESTORE EXERCISE
+- sub-documents - entity groups</p><p><a href=https://cloud.google.com/firestore/docs/quickstart-servers>https://cloud.google.com/firestore/docs/quickstart-servers</a></p><p>DO THE FIRESTORE EXERCISE
 EXAM
 - <a href=https://quiz.roitraining.com/de-quiz4.html>https://quiz.roitraining.com/de-quiz4.html</a></p><h2 id=memorystore>Memorystore</h2><p>managed, in-memory redis caching (key-value) - SET/GET
 no sql
@@ -161,41 +180,55 @@ scale 1GB to 300GB instances</p><p>Config:</p><p>basic tier
 - $35 / month</p><p>standard tier
 - has failover replica in another zone
 - 99.9% availability
-- $46 / month</p><p>choose RAM 1 - 300GB</p><p>open-source</p><p>tutorial: try.redis.io (not needed for exam)</p><p>secure with an internal IP address only
+- $46 / month</p><p>choose RAM 1GB - 300GB</p><p>open-source</p><p>tutorial: try.redis.io (not needed for exam)</p><p>secure with an internal IP address only
 - available only from within same VPC
-- IAM roles</p><p>EXAM!
+- IAM roles</p><h2 id=storage-relative-pricing>Storage Relative Pricing</h2><p>EXAM!
 Using the Price Calculator, estimate the cost of running a 10TB database using Cloud SQL, Spanner, Datastore, and Bigtable
 <a href=https://cloud.google.com/products/calculator/>https://cloud.google.com/products/calculator/</a>
 Do your best to estimate the values for each product
 Use the documentation to help with your estimates
-Compare with <a href="https://cloud.google.com/products/calculator/#id=a0518a39-ae29-4bd6-868b-162dc3e6fe64">https://cloud.google.com/products/calculator/#id=a0518a39-ae29-4bd6-868b-162dc3e6fe64</a></p><h2 id=cloud-sql>Cloud SQL</h2><p>Uses:
-- dynamic web apps - load balancer -&gt; compute engine instances in different zones -&gt; Master and replica Cloud SQL in different zones</p><p>NOT SaaS / managed!!!</p><p>Instance of:
+Compare with <a href="https://cloud.google.com/products/calculator/#id=a0518a39-ae29-4bd6-868b-162dc3e6fe64">https://cloud.google.com/products/calculator/#id=a0518a39-ae29-4bd6-868b-162dc3e6fe64</a></p><p>In order or expense:</p><p>Spanner $1600 / month 3 nodes
+Bigtable $1400 / month for cluster of 3 nodes
+MemoryStore $40/month
+Cloud SQL min $9/month 1 machine instance
+Firestore/Datastore 1GB storage free tier
+Cloud storage 5 GB US-regional free /month
+BigQuery - 10GB free storage, then 2c/GB-month for 1st 3 months, then 1c. 10TB left for a year = $1500</p><p><a href=https://cloud.google.com/free>https://cloud.google.com/free</a></p><h2 id=cloud-sql>Cloud SQL</h2><p>Uses:
+- dynamic web apps - load balancer -&gt; compute engine instances in different zones -&gt; Master and replica Cloud SQL in different zones</p><p>Managed service for relational dbs in GCP</p><p>Managed compute instances - you choose VM machine type and disk</p><ul><li>regional only ***</li></ul><h3 id=config-options>Config options</h3><ul><li>Database type - MySQL, PostgresSQL</li><li>instance id</li><li>Root password</li><li>Region / Zone - keep it close to your sevices</li><li>Database version</li></ul><p>Instance of:
 - MySQL
 - PostgresSQL
-- SQL Server is in beta/preview - and will be more expensive due to license</p><p>Default user password is required</p><p>Public IP by default - but there is a firewall preventing internet access - you need to autorise a network / open the firewall to that IP address range
-Private IP - only available within GCP network</p><p>Machine type and storage
-- Tune cores 1 shared to 64 CPUS - controls the network throughput MB/s. 10 CPUs gives max network of 2000 MB/s
-- Tune memory 3.75 to 6.5 GB</p><p>SSD or HDD
-Capacity 10GB to 30TB (to 30720 GB) - can&rsquo;t be decreased. Start small and select &ldquo;Enable automatic storage increase&rdquo;.</p><p>Automated backups
-Availabiltiy
-- signle zone (1 db server)
-- high avail (regional) - auto faiulure to another zone in the same region</p><p>Maintenance schedule
+- SQL Server is in beta/preview - and will be more expensive due to license</p><p>Default user password is required</p><p>= Connectivity
+Public IP by default - but there is a firewall preventing internet access - you need to autorise a network / open the firewall to that IP address range
+Private IP - only available within GCP network</p><p>= Machine type &amp; Storage
+- choose a machine with enough memory to hold your largest table
+- shared-core machines, standard machines, high memory machines
+- storage type - SSD, HDD
+- storage cpacity 10GB to 30GB - Start small and select &ldquo;Enable automatic storage increase&rdquo;.</p><ul><li>Tune cores 1 shared to 64 CPUS - controls the network throughput MB/s. 10 CPUs gives max network of 2000 MB/s</li><li>Tune memory 3.75 to 6.5 GB</li></ul><p>SSD or HDD
+Capacity between min 10GB to 30TB (to 30720 GB) - can&rsquo;t be decreased. Start small and select &ldquo;Enable automatic storage increase&rdquo;.
+Increased capacity =&gt; more disk throughput Mb/s</p><p>Automated backups &amp; HA
+- window</p><p>Availabiltiy
+- single zone (1 db server)
+- high avail (regional) - auto failover to another zone in the same region</p><p>Maintenance schedule
 - maint window - any window (fine for HA), otherwise select time and day of week
-- maint timing - any</p><p>Know the Advanced Options FOR THE EXAM</p><p>Standard installations of MySQL and PostgresSQL - no special config performed</p><h2 id=spanner>spanner</h2><p>Fully managed relational, strongly consistent, ACID transactions
+- maint timing - any</p><p>Know the Advanced Options FOR THE EXAM</p><p>Standard installations of MySQL and PostgresSQL - no special config performed</p><p><a href=https://cloud.google.com/sql/docs/>https://cloud.google.com/sql/docs/</a></p><p><a href=https://cloud.google.com/sql/docs/mysql/quickstart>https://cloud.google.com/sql/docs/mysql/quickstart</a></p><p><a href=https://cloud.google.com/sql/pricing#2nd-gen-pricing>https://cloud.google.com/sql/pricing#2nd-gen-pricing</a></p><h2 id=spanner>spanner</h2><p><a href=https://cloud.google.com/spanner/docs/>https://cloud.google.com/spanner/docs/</a>
+<a href=https://cloud.google.com/spanner/docs/best-practice-list>https://cloud.google.com/spanner/docs/best-practice-list</a></p><p>Fully managed relational, strongly consistent, ACID transactions
 Scales globally, distributed horizonatally across regions
 Number of nodes determines capacity
-Designed for extremely large relational databases</p><p>expensive! Min of US $1600 / month plus storage and usage costs!
-99.999% availability</p><p>Config:
+Designed for extremely large relational databases</p><p>expensive! Min of US $1600 / month plus storage and usage costs!</p><p>Single region Sydney:
+$1.22 per node-hour * 3 nodes for prod + $0.405 per GB-Month + general network egress (e.g. 19c / GB)</p><p>us-central1:
+$0.90 per node-hour + $0.30 per GB-Month</p><p>Multi-regional nam-eur-asia1:
+$9 per node-hour + $0.90 / GB-month</p><p>nam3 (north viginia / South Carolin)
+$3 per node-hour + $0.50 / GB-Month</p><p>Regional 99.99% availability</p><p>Multi-regional 99.999% availability</p><p>Config:
 - name
 - regional / multi-regional
 - each region has different number of replicas and availablitly
 - diff sets of read-write replicas
 - nam = north america
 - eur = europe
-- asia</p><ul><li>USD $8k per month</li><li><p>USD $42k per month for multi-regional - nam-eur-asia1</p></li><li><p>number of nodes</p><ul><li>1 node gives you no availability SLA - good for dev!</li><li>min 3 nodes for a prod env</li><li>recommended 1 node per 2TB of data</li><li>10TB = 5 nodes</li><li>100TB = 50 nodes</li><li>1000TB (1 petabyte) = 500 nodes</li></ul></li><li><p>uses atomic clocks attached to the servers to manage transactions</p></li><li><p>ansi sql 2011</p></li></ul><p>do slide 96 to compare costs of SQL vs Spanner</p><h2 id=hadoop>Hadoop</h2><p>17c per gb per month on the cluster</p><h2 id=dataproc>Dataproc</h2><p>Hadoop cluster</p><p>Config
+- asia</p><ul><li>USD $8k per month</li><li><p>USD $42k per month for multi-regional - nam-eur-asia1</p></li><li><p>number of nodes</p><ul><li>1 node gives you no availability SLA - good for dev!</li><li>min 3 nodes for a prod env</li><li>recommended 1 node per 2TB of data</li><li>10TB = 5 nodes</li><li>100TB = 50 nodes</li><li>1000TB (1 petabyte) = 500 nodes</li></ul></li></ul><p>For optimal performance in this configuration, we recommend provisioning enough nodes to keep high priority CPU utilization under 45%.</p><ul><li><p>uses atomic clocks attached to the servers to manage transactions</p></li><li><p>ansi sql 2011</p></li></ul><h2 id=hadoop>Hadoop</h2><p>17c per gb per month on the cluster</p><h2 id=dataproc>Dataproc</h2><p>Hadoop cluster</p><p>Config
 - name
 - region &amp; zone
-- mode
+- cluster mode
 - Single node 1 master, 0 wokers
 - Standard - 1 master, N workers (typical for production)
 - High Availabiltiy - 3 masters, N workers
@@ -220,20 +253,19 @@ Delete the cluster as soon as possible
 Only pay for it while it is working
 Can recreate the cluster in a couple minutes</p><p>Can run existing Hadoop and Spark jobs on Dataproc
 Use Cloud Storage not HDFS so the Dataproc cluster can be deleted without deleting the data
-Make the attached disks small
-Move HBase workloads to Bigtable to reduce administration
-Script creation of Dataproc clusters and jobs
+Make the attached disks small</p><p>Move HBase workloads to Bigtable to reduce administration</p><p>Script creation of Dataproc clusters and jobs
 Delete the cluster when the jobs are completed to reduce cost
 Machines are billed in 1-minute increments with a 10-minute minimum
-Consider using preemptible instances for some of the workers</p><p>Choose BigQuery over Dataproc for greenfield</p><p>Could run Jupyter on the Dataproc cluster</p><h3 id=google-big-data-history>Google Big Data History</h3><p>Google V1
+Consider using preemptible instances for some of the workers</p><p>** Choose BigQuery over Dataproc for greenfield **</p><p>Could run Jupyter on the Dataproc cluster</p><h3 id=google-big-data-history>Google Big Data History</h3><p>Google V1
 - GFS distributed file system + MapReduce became HDFS and Hadoop and given to Apache</p><p>Google V2
 - Colossus replaced GFS as Cloud Storage
 - Allows data stored off the cluster and brings more flexibilty to cluster management</p><pre><code>- Dremel replaced MapReduce as BigQuery (similar to Hive, Spark SQL, Presto)
     - Master parses SQL statement and turns it into a job
     - SQL is well suited to MapReduce functionality
-</code></pre><p>Pig is like what Python is to Java
+</code></pre><p>Pig is like Python compared with Java - verbosity
 Hive allows SQL to be submitted to Hadoop cluster - like BigQuery
-Apache Spark - effectively Hadoop v2, doing more in-memory to optimise Hadoop</p><h2 id=bigquery>bigquery</h2><p>typically the answer for anything mentioning &ldquo;Data warehousing&rdquo;!</p><p>Purpose
+Apache Spark - effectively Hadoop v2, doing more in-memory to optimise Hadoop</p><h2 id=bigquery>bigquery</h2><p>typically the answer for anything mentioning &ldquo;Data warehousing&rdquo;!
+move HBase workloads to BigQuery</p><p>Purpose
 - Data warehouse
 - Data analytics
 - ML</p><p>Uses:
@@ -266,10 +298,8 @@ Joins are expensive in BigQuery since there are no indexes</p><p>Storage Pricing
 - Capacity is measured in “slots”, a unit of processing in BigQuery
 - Run as many queries as you can, but you will never go over your purchased slots</p><p>EXAM
 - multiple questions on correct BigQuery queries - which is the right one</p><p>There are two dialects of BigQuery SQL, Legacy and Standard
-Legacy was the original, replaced in 2016
-Standard SQL is ANSI 2011 SQL compliant
-Very minor differences exist due to the platform
-Standard SQL includes data manipulation language (DML) statements
+Legacy was the original, replaced in 2016</p><p>Standard SQL is ANSI 2011 SQL compliant
+Very minor differences exist due to the platform</p><p>Standard SQL includes data manipulation language (DML) statements
 INSERT, UPDATE, DELETE
 Strict quotas apply to DML statements</p><p>STRUCT function creates a composite field.
 ARRAY_AGG function creates an array.
@@ -281,8 +311,8 @@ For public Datasets, grant Viewer role to allAuthenticatedUsers</p><p>Members at
 - Data Editor - RW data
 - Data Owner - RW to data, plus grant access to other users and groups by setting IAM policies
 - Data Viewer
-- Job User - create and run jobs, but not access data
-- User - run jobs, create datasets, list tables, save queries. No default access to data</p><h3 id=performance>Performance</h3><p>No indexes</p><p>Denormalize parent-child relationships
+- User - run jobs, create datasets, list tables, save queries. No default access to data
+- Job User - create and run jobs, but not access data - the least set of permissions possible</p><h3 id=performance>Performance</h3><p>No indexes</p><p>Denormalize parent-child relationships
 Store child records as repeated records with the parent row
 Allows querying related data without a join</p><p>Queries that were already run are cached
 Data returned from the cache is free</p><p>For very large tables, create smaller temp tables when possible</p><p>Partition tables when data is accumulated on a regular basis
@@ -297,7 +327,8 @@ Can specify the data range of partitions to query, avoiding a table scan</p><p>D
 Native storage puts fields in separate tables so queries only have to scan the fields in the query, not the whole table</p><p>Useful for ETL and denormalization jobs
 Read data from external source, manipulate it, and load it into BigQuery</p><p>See: <a href=https://cloud.google.com/bigquery/external-data-sources>https://cloud.google.com/bigquery/external-data-sources</a></p><h2 id=dataflow>Dataflow</h2><p>Fully managed cluster of VM instances is created to start a job</p><p>Use Cases:
 Not for ETL on 1GB data - not enough data to make it worthwhile - takes longer to start the cluster than run the job!
-Meant for Terabytes!</p><p>Perform a set of actions in a chain
+Meant for Terabytes of ETL!
+Meant for windowing/aggregation/complex event handling of streaming data</p><p>Perform a set of actions in a chain
 Data from one or more sources is read into the pipeline
 Actions are performed on the data to manipulate or transform it
 The manipulated results are sent as output from the pipeline</p><p>Actions within a data pipeline can run at the same time (concurrently)</p><p>At scale, multiple machines can participate to get the pipeline done faster</p><p>MapReduce jobs are examples of pipelines at scale
@@ -326,14 +357,15 @@ The interval defines how long a window collects data for
 The period defines how often a new window starts
 Session windows define windows on areas of concentrated data
 Uses a key to combine data into groups
-Like sessions in a web application</p><h2 id=pubsub>PubSub</h2><p>Pub/Sub is a fully managed, massively scalable messaging service
+Like sessions in a web application</p><p>Time-based windows can be based on with the event time or process time.</p><h2 id=pubsub>PubSub</h2><p>Pub/Sub is a fully managed, massively scalable messaging service
 It allows messages to be sent between independent applications<br>Can scale to millions of messages per second</p><p>Pub/Sub messages can be sent and received via HTTP(S)</p><p>Pub/Sub supports multiple senders and receivers simultaneously</p><p>Pub/Sub is a global service
 Messages are copied to multiple zones for greater fault tolerance
 Uses dedicated resources in every region for fast delivery worldwide</p><p>Pub/Sub is secure
-All message are encrypted at rest and in transit</p><p>Config:
+All message are encrypted at rest and in transit</p><p>Topic names are in the form:
+projects/<project-id>/topics/<topic-name></p><p>Config:
 - Delivery type
-- Pull - e.g. a Kubernetes service
-- Push - web service / Cloud Function, App Engine app + std environment (scales to zero)</p><p>Pricing:
+- Pull - e.g. Dataflow jobs, a Kubernetes service; subscriber calls pull() then acknowledge()
+- Push - HTTPS web service / Cloud Function, App Engine app + std environment (scales to zero); ACK implied by a 200 OK response code</p><p>Pricing:
 - charged by GB of message data</p><p>Event time is when something actually occurred
 The time an order is placed for example
 This is when the message is published to Pub/Sub
@@ -343,9 +375,9 @@ Obviously, process time is always after event time
 Usually, this is a short period of time
 Sometimes, a system problem will delay the process time
 The difference between event and process times can vary significantly
-Event occurs in a mobile application when the user is on an airplane</p><h2 id=dataprep>Dataprep</h2><p>Visual tool for cleaning and manipulating data
-For massive datasets only (it runs on Dataflow - think Terabytes)
-Serverless on top of Dataflow -</p><h2 id=composer>Composer</h2><p>A service that creates the Apache AirFlow server for you</p><p>Create environment
+Event occurs in a mobile application when the user is on an airplane</p><h2 id=dataprep>Dataprep</h2><p>Visual tool for cleaning and manipulating data</p><p>For massive datasets only (it runs on Dataflow - think Terabytes)
+Serverless on top of Dataflow</p><h2 id=composer>Composer</h2><p>A service that creates the Apache AirFlow server for you
+Orchestrate workloads across GCP, on-premises &amp; other clouds</p><p>Create environment
 - name
 - node count
 - machine type
@@ -356,7 +388,8 @@ Serverless on top of Dataflow -</p><h2 id=composer>Composer</h2><p>A service tha
 - each step is in a DAG
 - each step is an Python or Bash Operator
 - specify order of steps in python: step1 &gt;&gt; step2 &gt;&gt; step3</p><p>Built-in connectors for many GCP services</p><p>If bug, just overwrite the file in storage</p><h2 id=app-engine>App Engine</h2><p>Standard environment (scales to zero)</p><h2 id=cloud-function>Cloud Function</h2><p>Great for cheap push of a steaming data from PubSub</p><p>40c per million request
-2 million requets free per month</p><h2 id=data-loss-prevention>Data Loss Prevention</h2><p>API to help classify and redact sensitive data
+2 million requets free per month
++ CPU usage</p><h2 id=data-loss-prevention>Data Loss Prevention</h2><p>API to help classify and redact sensitive data
 Helps customers meet their compliance obligations
 Works with image or text data</p><p>Data can be in GCP, other clouds, or on-prem
 Built-in support for BigQuery, Datastore, and GCS</p><p>90-plus built-in detectors for common sensitive data items
@@ -395,7 +428,12 @@ Sum of weighted features gives the prediction</p><p>Algorithms
 - Linear Regression - value along a line
 - Classification - 2 or more categories
 - Single layer neural models
-- Neural networks - collection of layers</p><h2 id=tensorflow>TensorFlow</h2><p>No code in the EXAM</p><p>Supports Python, Go, JavaScript</p><h2 id=cloud-ai-platform-ml-engine>Cloud AI Platform / ML Engine</h2><p>Navigation -&gt; AI Platofrm -&gt; Jobs</p><p>gcloud ml-engine jobs submit training my_job &ndash;module-name trainer.task &ndash;staging-bucket gs://my-bucket &ndash;package-path /my/code/path/trainer &ndash;packages additional-dep1.tar.gz,dep2.whl
+- Neural networks - collection of layers</p><h2 id=tensorflow>TensorFlow</h2><p>No code in the EXAM</p><p>Supports Python, Go, JavaScript</p><h2 id=cloud-ai-platform-ml-engine>Cloud AI Platform / ML Engine</h2><p>Navigation -&gt; AI Platofrm -&gt; Jobs</p><p>Cloud-based service used to build machine learning models
+Used by Google to build their own models
+Fully-managed NoOps service
+Supports training on CPUs, GPUs, and TPUs
+Can be used to deploy models as services
+Command-line API for submitting jobs, deploying models, and making predictions</p><p>gcloud ml-engine jobs submit training my_job &ndash;module-name trainer.task &ndash;staging-bucket gs://my-bucket &ndash;package-path /my/code/path/trainer &ndash;packages additional-dep1.tar.gz,dep2.whl
 gcloud ml-engine jobs submit prediction JOB &ndash;data-format=DATA_FORMAT &ndash;input-paths=INPUT_PATH,[INPUT_PATH,…] &ndash;output-path=OUTPUT_PATH &ndash;region=REGION
 gcloud ml-engine models create MODEL [&ndash;enable-logging] [&ndash;regions=REGION,[REGION,…]] [GCLOUD_WIDE_FLAG …]</p><p>Allows you to specify the number and type of training machines
 no-ops and can automate hyperparameter tuning
@@ -429,7 +467,7 @@ reporting can b harder</p><p>key-value stores
 - Column data types and number of columns can be different within each row
 - All info about an entity is within the same row
 - Cassandra and HBase are examples
-- Bigtable</p><h2 id=availability-durability>Availability / Durability</h2><p>Availability is the percentage of time the data can be accessed - Achieved by deploying services to multiple zones and/or regions
+- Bigtable</p><p>NoSQL is NOT blob storage!</p><h2 id=availability-durability>Availability / Durability</h2><p>Availability is the percentage of time the data can be accessed - Achieved by deploying services to multiple zones and/or regions
 Durability defines the likelihood of losing data because of a hardware failure - Achieved by writing data to multiple physical disks; The more disks, the higher the durability</p><h2 id=use-cases>Use Cases</h2><p>High availabilty - customer visible, real-time
 Cost and durability - backups, archives - sacrifice availability or performance to make it cheaper
 Cost is only consideration - cache or temporary data store that can be destroyed and recreated from other sources - typically in memory - want it to be cheap</p><h2 id=consistency>Consistency</h2><p>Transactional consistency – When a transaction completes, all operations must be successful or all are rolled back
